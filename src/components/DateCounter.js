@@ -17,17 +17,16 @@ function reducer(state, action) {
     case "reset":
       return initialState;
     default:
-      throw new ErrorEvent("Unknown action");
+      throw new Error("Unknown action");
   }
 }
 
 function DateCounter() {
   const [state, dispatch] = useReducer(reducer, initialState);
-
   const { count, step } = state;
 
   // This mutates the date object.
-  const date = new Date("Feb 4 2024");
+  const date = new Date("june 21 2027");
   date.setDate(date.getDate() + count);
 
   const dec = function () {
